@@ -7,6 +7,6 @@
   ItemsController.$inject = ['categoryItems'];
   function ItemsController(categoryItems){
     var itemsCtrl = this;
-    itemsCtrl.items = categoryItems;
+    itemsCtrl.items = categoryItems.menu_items;
   }
 })();

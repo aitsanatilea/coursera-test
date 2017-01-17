@@ -21,19 +21,21 @@
     service.getItemsForCategory = function(categoryShortName){
       return $http({
         method: "GET",
-        url: (ApiBasePath+"/menu_items.json")
+        url: (ApiBasePath+"/menu_items.json?category="+categoryShortName)
       })
       .then(function (result) {
-        var fullList = result.data;
-        var categoryItems = [];
-
-        for (var i=0; i<fullList.menu_items.length; i++){
-          var patt = new RegExp(categoryShortName.toLowerCase()+"[0-9]+", "i");
-          if (fullList.menu_items[i].short_name.toLowerCase().search(patt)==0){
-            categoryItems.push(fullList.menu_items[i]);
-          }
-        }
-        return categoryItems;
+        // var fullList = result.data;
+        // var categoryItems = [];
+        //
+        // for (var i=0; i<fullList.menu_items.length; i++){
+        //   var patt = new RegExp(categoryShortName.toLowerCase()+"[0-9]+", "i");
+        //   if (fullList.menu_items[i].short_name.toLowerCase().search(patt)==0){
+        //     categoryItems.push(fullList.menu_items[i]);
+        //   }
+        // }
+        // return categoryItems;
+        console.log(result.data);
+        return result.data;
       });
     };
   }
