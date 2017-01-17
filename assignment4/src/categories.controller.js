@@ -8,13 +8,5 @@
   function CategoriesController(categories){
     var catList = this;
     catList.items = categories;
-    console.log(catList.items);
-
-    // catList.$onInit = function(){
-    //   MenuDataService.getAllCategories()
-    //   .then(function(result){
-    //     catList.items = result.data;
-    //   });
-    // };
   }
 })();
